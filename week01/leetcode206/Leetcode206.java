@@ -7,11 +7,10 @@
 //        进阶:
 //        你可以迭代或递归地反转链表。你能否用两种方法解决这道题？
 
-import java.util.Stack;
 
 /**
- * @author songshiyu  反转链表
- * @create: 2021/3/31 14:54:31
+ * @author songshiyu 翻转列表
+ * @date 2021/3/31 20:02
  **/
 public class Leetcode206 {
 
@@ -33,24 +32,44 @@ public class Leetcode206 {
     }
 
     /**
-     * 迭代的方式实现翻转链表
+     * 迭代方式
+     *
+     * @param
+     * @return
+     */
+    public ListNode reverseList(ListNode head) {
+
+        ListNode preNode = null;
+        ListNode curNode = head;
+
+        while (curNode != null) {
+            ListNode tmpNode = curNode.next;
+            curNode.next = preNode;
+            preNode = curNode;
+            curNode = tmpNode;
+        }
+        return preNode;
+    }
+
+    /**
+     * 递归方式解决,需要在熟悉
      *
      * @param head
      * @return
      */
-    public ListNode reverseList(ListNode head) {
-        ListNode pre = null;
-        ListNode curNode = head;
-        while (curNode != null) {
-            ListNode tmp = curNode.next;
-            curNode.next = pre;
-            pre = curNode;
-            curNode = tmp;
+    public ListNode reverseList2(ListNode head) {
 
+        if (head == null || head.next == null){
+            return head;
         }
-        return pre;
+        ListNode newHead = reverseList2(head.next);
+        head.next.next = head;
+        head.next = null;
+        return newHead;
     }
 
+    public static void main(String[] args) {
+        ListNode head = new ListNode();
 
-
+    }
 }
