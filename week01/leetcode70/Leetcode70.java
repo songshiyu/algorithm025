@@ -26,7 +26,13 @@
  **/
 public class Leetcode70 {
 
-    public int climbStairs(int n) {
+    /**
+     * 斐波那契数列 fn = f(n-1) + f(n-2)
+     *
+     * @param n
+     * @return
+     */
+    public static int climbStairs(int n) {
 
         if (n <= 2) {
             return n;
