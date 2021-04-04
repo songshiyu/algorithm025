@@ -31,7 +31,7 @@
  * @author songshiyu 加一
  * @create: 2021/4/1 09:15:32
  **/
-public class Leetcode66 {
+public class Leetcode61_PlusOne {
 
     public int[] plusOne(int[] digits) {
         if (digits == null) {
