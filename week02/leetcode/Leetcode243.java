@@ -41,7 +41,9 @@ public class Leetcode243 {
     }
 
     /**
-     * 利用hash表 TODO
+     * 利用hash表
+     * 使用数组作为hash表，创建一个大小为26的数组，两次循环，根据对应索引上的值是否小于0，
+     * 来判断两个字符串是否为有效的字母异位词
      *
      * @param s
      * @param t
@@ -51,12 +53,21 @@ public class Leetcode243 {
         if (s.length() != t.length()) {
             return false;
         }
-        String[] array = new String[26];
-        return false;
+        int[] table = new int[26];
+        for (int i = 0; i < s.length(); i++) {
+            table[s.charAt(i) - 'a']++;
+        }
+        for (int i = 0; i < t.length(); i++) {
+            table[t.charAt(i) - 'a']--;
+            if (table[t.charAt(i) - 'a'] < 0) {
+                return false;
+            }
+        }
+        return true;
     }
 
     public static void main(String[] args) {
-        String s = "anagram", t = "nagaram";
-        isAnagram(s, t);
+        String s = "aacc", t = "ccac";
+        isAnagram2(s, t);
     }
 }

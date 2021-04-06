@@ -20,7 +20,7 @@
 //        解释: 朋友猜测数中的第一个 1 是公牛，第二个或第三个 1 可被视为奶牛
 
 /**
- * @author songshiyu
+ * @author songshiyu TODO
  * @date 2021/4/5 14:49
  **/
 public class Leetcode299 {
