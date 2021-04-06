@@ -11,6 +11,7 @@
       <sourceFolder url="file://$MODULE_DIR$/week01/leetcode206" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/week01/leetcode66" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/week01/leetcode24" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/week01/leetcode" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
