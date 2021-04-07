@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="413860c5-a185-4a63-94ee-61abdd9cc956" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/week02/leetcode/MyCircularDeque.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week01/leetcode/Leetcode155.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week02/leetcode/Leetcode350Intersect.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week02/NOTE.md" beforeDir="false" afterPath="$PROJECT_DIR$/week02/NOTE.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,6 +123,7 @@
       <workItem from="1617153449464" duration="12454000" />
       <workItem from="1617239660496" duration="21797000" />
       <workItem from="1617667995067" duration="3663000" />
+      <workItem from="1617758268022" duration="4542000" />
     </task>
     <task id="LOCAL-00001" summary="leetcode66 加一问题">
       <created>1617242477729</created>
@@ -182,7 +185,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -196,7 +201,8 @@
     <MESSAGE value="merge" />
     <MESSAGE value="日常刷题" />
     <MESSAGE value="Merge branch 'main' of https://github.com/songshiyu/algorithm025 into main&#10;&#10; Conflicts:&#10;&#9;week01/homework/Leetcode61_PlusOne.java&#10;&#9;week01/leetcode/Leetcode24.java&#10;&#9;week01/leetcode/Leetcode66.java&#10;&#9;week01/leetcode66/Leetcode66.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'main' of https://github.com/songshiyu/algorithm025 into main&#10;&#10; Conflicts:&#10;&#9;week01/homework/Leetcode61_PlusOne.java&#10;&#9;week01/leetcode/Leetcode24.java&#10;&#9;week01/leetcode/Leetcode66.java&#10;&#9;week01/leetcode66/Leetcode66.java" />
+    <MESSAGE value="循环双端队列" />
+    <option name="LAST_COMMIT_MESSAGE" value="循环双端队列" />
   </component>
   <component name="WindowStateProjectService">
     <state x="432" y="120" key="#com.intellij.refactoring.encapsulateFields.EncalpsulateFieldsDialog" timestamp="1617243286389">
@@ -211,61 +217,61 @@
       <screen x="0" y="23" width="1440" height="813" />
     </state>
     <state x="483" y="140" key="#xdebugger.evaluate/0.23.1440.813@0.23.1440.813" timestamp="1617683706354" />
-    <state x="314" y="23" key="CommitChangelistDialog2" timestamp="1617674526575">
+    <state x="317" y="23" key="CommitChangelistDialog2" timestamp="1617690649732">
       <screen x="0" y="23" width="1440" height="813" />
     </state>
-    <state x="317" y="38" key="CommitChangelistDialog2/0.23.1440.813/1440.-197.1920.1057@0.23.1440.813" timestamp="1617344794862" />
+    <state x="317" y="23" key="CommitChangelistDialog2/0.23.1440.813/1440.-197.1920.1057@0.23.1440.813" timestamp="1617690649732" />
     <state x="314" y="23" key="CommitChangelistDialog2/0.23.1440.813@0.23.1440.813" timestamp="1617674526575" />
     <state x="144" y="93" key="DiffContextDialog" timestamp="1617344630283">
       <screen x="0" y="23" width="1440" height="813" />
     </state>
     <state x="144" y="93" key="DiffContextDialog/0.23.1440.813/1440.-197.1920.1057@0.23.1440.813" timestamp="1617344630283" />
-    <state width="698" height="278" key="GridCell.Tab.0.bottom" timestamp="1617683696711">
+    <state width="698" height="278" key="GridCell.Tab.0.bottom" timestamp="1617690663299">
       <screen x="0" y="23" width="1440" height="813" />
     </state>
-    <state width="1396" height="8" key="GridCell.Tab.0.bottom/0.23.1440.813/1440.-197.1920.1057@0.23.1440.813" timestamp="1617159146284" />
+    <state width="698" height="278" key="GridCell.Tab.0.bottom/0.23.1440.813/1440.-197.1920.1057@0.23.1440.813" timestamp="1617690663299" />
     <state width="1396" height="8" key="GridCell.Tab.0.bottom/0.23.1440.813/1440.-197.1920.1057@1440.-197.1920.1057" timestamp="1617236983642" />
     <state width="698" height="278" key="GridCell.Tab.0.bottom/0.23.1440.813@0.23.1440.813" timestamp="1617683696711" />
-    <state width="698" height="278" key="GridCell.Tab.0.center" timestamp="1617683696710">
+    <state width="698" height="278" key="GridCell.Tab.0.center" timestamp="1617690663298">
       <screen x="0" y="23" width="1440" height="813" />
     </state>
-    <state width="1396" height="8" key="GridCell.Tab.0.center/0.23.1440.813/1440.-197.1920.1057@0.23.1440.813" timestamp="1617159146282" />
+    <state width="698" height="278" key="GridCell.Tab.0.center/0.23.1440.813/1440.-197.1920.1057@0.23.1440.813" timestamp="1617690663298" />
     <state width="1396" height="8" key="GridCell.Tab.0.center/0.23.1440.813/1440.-197.1920.1057@1440.-197.1920.1057" timestamp="1617236983641" />
     <state width="698" height="278" key="GridCell.Tab.0.center/0.23.1440.813@0.23.1440.813" timestamp="1617683696710" />
-    <state width="698" height="278" key="GridCell.Tab.0.left" timestamp="1617683696710">
+    <state width="698" height="278" key="GridCell.Tab.0.left" timestamp="1617690663297">
       <screen x="0" y="23" width="1440" height="813" />
     </state>
-    <state width="1396" height="8" key="GridCell.Tab.0.left/0.23.1440.813/1440.-197.1920.1057@0.23.1440.813" timestamp="1617159146281" />
+    <state width="698" height="278" key="GridCell.Tab.0.left/0.23.1440.813/1440.-197.1920.1057@0.23.1440.813" timestamp="1617690663297" />
     <state width="1396" height="8" key="GridCell.Tab.0.left/0.23.1440.813/1440.-197.1920.1057@1440.-197.1920.1057" timestamp="1617236983641" />
     <state width="698" height="278" key="GridCell.Tab.0.left/0.23.1440.813@0.23.1440.813" timestamp="1617683696710" />
-    <state width="698" height="278" key="GridCell.Tab.0.right" timestamp="1617683696710">
+    <state width="698" height="278" key="GridCell.Tab.0.right" timestamp="1617690663298">
       <screen x="0" y="23" width="1440" height="813" />
     </state>
-    <state width="1396" height="8" key="GridCell.Tab.0.right/0.23.1440.813/1440.-197.1920.1057@0.23.1440.813" timestamp="1617159146283" />
+    <state width="698" height="278" key="GridCell.Tab.0.right/0.23.1440.813/1440.-197.1920.1057@0.23.1440.813" timestamp="1617690663298" />
     <state width="1396" height="8" key="GridCell.Tab.0.right/0.23.1440.813/1440.-197.1920.1057@1440.-197.1920.1057" timestamp="1617236983642" />
     <state width="698" height="278" key="GridCell.Tab.0.right/0.23.1440.813@0.23.1440.813" timestamp="1617683696710" />
-    <state width="698" height="278" key="GridCell.Tab.1.bottom" timestamp="1617683696712">
+    <state width="698" height="278" key="GridCell.Tab.1.bottom" timestamp="1617690663300">
       <screen x="0" y="23" width="1440" height="813" />
     </state>
-    <state width="1396" height="134" key="GridCell.Tab.1.bottom/0.23.1440.813/1440.-197.1920.1057@0.23.1440.813" timestamp="1617157156913" />
+    <state width="698" height="278" key="GridCell.Tab.1.bottom/0.23.1440.813/1440.-197.1920.1057@0.23.1440.813" timestamp="1617690663300" />
     <state width="1876" height="94" key="GridCell.Tab.1.bottom/0.23.1440.813/1440.-197.1920.1057@1440.-197.1920.1057" timestamp="1617236983633" />
     <state width="698" height="278" key="GridCell.Tab.1.bottom/0.23.1440.813@0.23.1440.813" timestamp="1617683696712" />
-    <state width="698" height="278" key="GridCell.Tab.1.center" timestamp="1617683696711">
+    <state width="698" height="278" key="GridCell.Tab.1.center" timestamp="1617690663299">
       <screen x="0" y="23" width="1440" height="813" />
     </state>
-    <state width="1396" height="134" key="GridCell.Tab.1.center/0.23.1440.813/1440.-197.1920.1057@0.23.1440.813" timestamp="1617157156912" />
+    <state width="698" height="278" key="GridCell.Tab.1.center/0.23.1440.813/1440.-197.1920.1057@0.23.1440.813" timestamp="1617690663299" />
     <state width="1876" height="94" key="GridCell.Tab.1.center/0.23.1440.813/1440.-197.1920.1057@1440.-197.1920.1057" timestamp="1617236983633" />
     <state width="698" height="278" key="GridCell.Tab.1.center/0.23.1440.813@0.23.1440.813" timestamp="1617683696711" />
-    <state width="698" height="278" key="GridCell.Tab.1.left" timestamp="1617683696711">
+    <state width="698" height="278" key="GridCell.Tab.1.left" timestamp="1617690663299">
       <screen x="0" y="23" width="1440" height="813" />
     </state>
-    <state width="1396" height="134" key="GridCell.Tab.1.left/0.23.1440.813/1440.-197.1920.1057@0.23.1440.813" timestamp="1617157156912" />
+    <state width="698" height="278" key="GridCell.Tab.1.left/0.23.1440.813/1440.-197.1920.1057@0.23.1440.813" timestamp="1617690663299" />
     <state width="1876" height="94" key="GridCell.Tab.1.left/0.23.1440.813/1440.-197.1920.1057@1440.-197.1920.1057" timestamp="1617236983632" />
     <state width="698" height="278" key="GridCell.Tab.1.left/0.23.1440.813@0.23.1440.813" timestamp="1617683696711" />
-    <state width="698" height="278" key="GridCell.Tab.1.right" timestamp="1617683696712">
+    <state width="698" height="278" key="GridCell.Tab.1.right" timestamp="1617690663300">
       <screen x="0" y="23" width="1440" height="813" />
     </state>
-    <state width="1396" height="134" key="GridCell.Tab.1.right/0.23.1440.813/1440.-197.1920.1057@0.23.1440.813" timestamp="1617157156913" />
+    <state width="698" height="278" key="GridCell.Tab.1.right/0.23.1440.813/1440.-197.1920.1057@0.23.1440.813" timestamp="1617690663300" />
     <state width="1876" height="94" key="GridCell.Tab.1.right/0.23.1440.813/1440.-197.1920.1057@1440.-197.1920.1057" timestamp="1617236983633" />
     <state width="698" height="278" key="GridCell.Tab.1.right/0.23.1440.813@0.23.1440.813" timestamp="1617683696712" />
     <state x="144" y="93" key="MergeDialog" timestamp="1617344818844">
@@ -277,20 +283,25 @@
     </state>
     <state x="433" y="152" key="MultipleFileMergeDialog/0.23.1440.813/1440.-197.1920.1057@0.23.1440.813" timestamp="1617344821355" />
     <state x="433" y="152" key="MultipleFileMergeDialog/0.23.1440.813@0.23.1440.813" timestamp="1617671597833" />
-    <state x="320" y="169" key="Vcs.Push.Dialog.v2" timestamp="1617674545786">
+    <state x="208" y="23" key="SettingsEditor" timestamp="1617759749321">
       <screen x="0" y="23" width="1440" height="813" />
     </state>
-    <state x="320" y="169" key="Vcs.Push.Dialog.v2/0.23.1440.813/1440.-197.1920.1057@0.23.1440.813" timestamp="1617344711282" />
+    <state x="208" y="23" key="SettingsEditor/0.23.1440.813@0.23.1440.813" timestamp="1617759749321" />
+    <state x="320" y="169" key="Vcs.Push.Dialog.v2" timestamp="1617763354928">
+      <screen x="0" y="23" width="1440" height="813" />
+    </state>
+    <state x="320" y="169" key="Vcs.Push.Dialog.v2/0.23.1440.813/1440.-197.1920.1057@0.23.1440.813" timestamp="1617763354928" />
     <state x="320" y="169" key="Vcs.Push.Dialog.v2/0.23.1440.813@0.23.1440.813" timestamp="1617674545786" />
-    <state x="509" y="353" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1617242493563">
+    <state x="509" y="353" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1617763359384">
       <screen x="0" y="23" width="1440" height="813" />
     </state>
+    <state x="509" y="353" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.813/1440.-197.1920.1057@0.23.1440.813" timestamp="1617763359384" />
     <state x="509" y="353" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.813@0.23.1440.813" timestamp="1617242493563" />
-    <state x="405" y="228" key="git4idea.merge.GitPullDialog" timestamp="1617674535412">
+    <state x="405" y="228" key="git4idea.merge.GitPullDialog" timestamp="1617758272666">
       <screen x="0" y="23" width="1440" height="813" />
     </state>
     <state x="405" y="228" key="git4idea.merge.GitPullDialog/0.23.1440.813/1440.-197.1920.1057@0.23.1440.813" timestamp="1617344802970" />
-    <state x="405" y="228" key="git4idea.merge.GitPullDialog/0.23.1440.813@0.23.1440.813" timestamp="1617674535412" />
+    <state x="405" y="228" key="git4idea.merge.GitPullDialog/0.23.1440.813@0.23.1440.813" timestamp="1617758272666" />
     <state x="385" y="160" width="670" height="676" key="search.everywhere.popup" timestamp="1617682372610">
       <screen x="0" y="23" width="1440" height="813" />
     </state>
