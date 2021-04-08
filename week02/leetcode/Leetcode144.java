@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Deque;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -47,6 +49,29 @@ public class Leetcode144 {
             result.add(node.val);
             preorderTraversal(result, node.left);
             preorderTraversal(result, node.right);
+        }
+
+        /**
+         * 题解--迭代方式
+         *
+         * @param root
+         * @return
+         */
+        public List<Integer> preorderTraversal2(TreeNode root) {
+
+            List<Integer> result = new ArrayList<>();
+            Deque<TreeNode> stack = new LinkedList<>();
+
+            while (root != null || !stack.isEmpty()) {
+                while (root != null) {
+                    result.add(root.val);
+                    stack.push(root);
+                    root = root.left;
+                }
+                root = stack.pop();
+                root = root.right;
+            }
+            return result;
         }
     }
 }
