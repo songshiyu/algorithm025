@@ -29,109 +29,110 @@
 //        请不要使用内置的双端队列库。
 
 /**
- * @description: 设计循环双端队列 TODO 需要修改
- * @E-mail: ssy3@meitu.com
+ * @description: 设计循环双端队列
+ * @author songshiyu
  * @create: 2021/4/6 12:06:37
  **/
 public class MyCircularDeque {
 
-    private int[] array = null;
-    private int size;
-    private int head;
-    private int tail;
+    private int[] array;
+    private int front;
+    private int rear;
+    private int capacity;
 
     /**
      * Initialize your data structure here. Set the size of the deque to be k.
      */
     public MyCircularDeque(int k) {
-        array = new int[k];
-        size = 0;
-        head = tail = 0;
+        this.array = new int[k + 1];
+        this.capacity = k + 1;
+        this.front = 0;
+        this.rear = 0;
     }
 
     /**
      * Adds an item at the front of Deque. Return true if the operation is successful.
      */
     public boolean insertFront(int value) {
-        if (head == tail && size != 0) {
-            return false;
+        if (!this.isFull()) {
+            this.front = (this.front - 1 + this.capacity) % this.capacity;
+            this.array[this.front] = value;
+            return true;
         }
-        head = (head - 1 + array.length) % array.length;
-        array[head] = value;
-        size++;
-        return true;
+        return false;
     }
 
     /**
      * Adds an item at the rear of Deque. Return true if the operation is successful.
      */
     public boolean insertLast(int value) {
-        if (head == tail && size != 0) {
-            return false;
+        if (!isFull()) {
+            this.array[this.rear] = value;
+            this.rear = (this.rear + 1) % this.capacity;
+            return true;
         }
-        array[tail] = value;
-        tail = (tail + 1 + array.length) % array.length;
-        size++;
-        return true;
+        return false;
     }
 
     /**
      * Deletes an item from the front of Deque. Return true if the operation is successful.
      */
     public boolean deleteFront() {
-        if (size == 0) {
-            return false;
+        if (!this.isEmpty()) {
+            this.front = (this.front + 1) % this.capacity;
+            return true;
         }
-        head = (head + 1 + array.length) % array.length;
-        size--;
-        return true;
-
+        return false;
     }
 
     /**
      * Deletes an item from the rear of Deque. Return true if the operation is successful.
      */
     public boolean deleteLast() {
-        if (size == 0) {
-            return false;
+        if (!this.isEmpty()) {
+            this.rear = (this.rear - 1 + this.capacity) % this.capacity;
+            return true;
         }
-        tail = (tail - 1 + array.length) % array.length;
-        size--;
-        return true;
+        return false;
     }
 
     /**
      * Get the front item from the deque.
      */
     public int getFront() {
-        return array[head];
+        if (!this.isEmpty()) {
+            return this.array[this.front];
+        }
+        return -1;
     }
 
     /**
      * Get the last item from the deque.
      */
     public int getRear() {
-        return array[tail - 1];
+        if (!this.isEmpty()) {
+            return this.array[(this.rear - 1 + this.capacity) % this.capacity];
+        }
+        return -1;
     }
 
     /**
      * Checks whether the circular deque is empty or not.
      */
     public boolean isEmpty() {
-        return head == tail && size == 0;
+        if (this.front == this.rear) {
+            return true;
+        }
+        return false;
     }
 
     /**
      * Checks whether the circular deque is full or not.
      */
     public boolean isFull() {
-        return head == tail && size != 0;
-    }
-
-    public static void main(String[] args) {
-        MyCircularDeque myCircularDeque = new MyCircularDeque(3);
-        myCircularDeque.insertLast(3);
-        myCircularDeque.insertLast(1);
-        myCircularDeque.insertFront(2);
+        if ((this.rear + 1) % this.capacity == this.front) {
+            return true;
+        }
+        return false;
     }
 }
