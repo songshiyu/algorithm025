@@ -27,45 +27,52 @@
 //        bank: ["AAAACCCC", "AAACCCCC", "AACCCCCC"]
 //        返回值: 3
 
-import java.util.Arrays;
+import java.util.HashSet;
 
 /**
- * @author songshiyu 最小基因变化 TODO 以下解法是错误的
+ * @author songshiyu 最小基因变化
  * @create: 2021/4/20 09:12:02
  **/
 public class LeetCode433 {
 
     /**
-     * 第一次理解：找start与end中相同索引位置上，元素不相同的个数
-     *
      * @param start
      * @param end
      * @param bank
      * @return
      */
-    public static int minMutation(String start, String end, String[] bank) {
+    private int minStepCount = Integer.MAX_VALUE;
 
-        if (start.length() != end.length() || bank.length == 0 || !Arrays.asList(bank).contains(end)) {
+    public int minMutation(String start, String end, String[] bank) {
+        if (start.length() != end.length() || bank.length == 0) {
             return -1;
         }
-        int minStep = 0;
-
-        char[] startChars = start.toCharArray();
-        for (int i = 0; i < start.length(); i++) {
-            if (startChars[i] != end.charAt(i)) {
-                startChars[i] = end.charAt(i);
-                if (Arrays.asList(bank).contains(new String(startChars))) {
-                    minStep++;
-                } else {
-                    return -1;
-                }
-            }
-        }
-        return minStep;
+        dfs(start, end, bank, new HashSet<String>(), 0);
+        return minStepCount == Integer.MAX_VALUE ? -1 : minStepCount;
     }
 
-    public static void main(String[] args) {
-        String[] bank = {"AACCGGTA"};
-        System.out.println(minMutation("AACCGGTT", "AACCGGTA", bank));
+    private void dfs(String current, String target, String[] bank, HashSet<String> steps, int stepCount) {
+
+        if (current.equals(target)) {
+            minStepCount = Math.min(minStepCount, stepCount);
+            return;
+        }
+        for (String str : bank) {
+            int different = 0;
+            //只去找基因序列中，经过一步变异，即可等于current的字符串
+            for (int i = 0; i < str.length(); i++) {
+                if (str.charAt(i) != current.charAt(i)) {
+                    different++;
+                    if (different > 1) {
+                        break;
+                    }
+                }
+            }
+            if (different == 1 && !steps.contains(str)) {
+                steps.add(str);
+                dfs(str, target, bank, steps, stepCount + 1);
+                steps.remove(str);
+            }
+        }
     }
 }
