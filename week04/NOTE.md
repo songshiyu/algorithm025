@@ -29,4 +29,25 @@
         1.最优子结构性质。如果问题的最优解包含的子问题的解也是最优的。我们就称该问题具有最优子结构性质(即满足最优化原理)。
         2.无后效性。即子问题的解一旦确定，就不在改变，不会受在这之后、包含它的更大的问题的求解而影响
         3.子问题重叠性质。子问题重叠性质是指在用递归算法自顶向下对问题求解时，每次产生的子问题并不总是最新问题，有些子问题会被重复计算多次。
+        
+作业：使用二分查找，寻找一个半有序数组 [4, 5, 6, 7, 0, 1, 2] 中间无序的地方
+
+         public static int findMin(int[] nums) {
+                int beginIndex = 0, endIndex = nums.length - 1, result = 0;
+                while (beginIndex <= endIndex) {
+                    if (nums[beginIndex] <= nums[endIndex]) {
+                        int resultIndex = endIndex + 1;
+                        if (resultIndex >= nums.length) {
+                            result = nums[beginIndex];
+                        } else {
+                            result = nums[resultIndex];
+                        }
+                        break;
+                    } else {
+                        endIndex--;
+        
+                    }
+                }
+                return result;
+            }
     

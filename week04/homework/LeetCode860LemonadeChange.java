@@ -1,8 +1,8 @@
 /**
- * @author songshiyu
+ * @author songshiyu 柠檬水找零问题
  * @date 2021/4/24 10:22
  **/
-public class LeetCode860_2 {
+public class LeetCode860LemonadeChange {
 
     public boolean lemonadeChange(int[] bills) {
         if (bills == null || bills.length == 0 || bills[0] > 5) {
