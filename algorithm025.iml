@@ -18,6 +18,11 @@
       <sourceFolder url="file://$MODULE_DIR$/week02/homework" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/week03/Leetcode" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/week03/homework" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/week04/BFS" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/week04/leetcode" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/everyday" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/week04/DFS" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/week04/homework" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
