@@ -15,56 +15,60 @@
 //        输入：beginWord = "hit", endWord = "cog", wordList = ["hot","dot","dog","lot","log"]
 //        输出：0
 //        解释：endWord "cog" 不在字典中，所以无法进行转换。
-
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
- * @author songshiyu 单词接龙 TODO 有疑问
+ * @author songshiyu 单词接龙 
  * @date 2021/4/25 19:57
  **/
 public class LeetCode127LadderLength {
 
-    static int minStep = Integer.MAX_VALUE;
-
-    public static int ladderLength(String beginWord, String endWord, List<String> wordList) {
-        if (beginWord == null || endWord == null || wordList == null) {
+    public int ladderLength(String beginWord, String endWord, List<String> wordList) {
+        if (!wordList.contains(endWord)) {
             return 0;
         }
-        if (beginWord.length() == 1 && endWord.length() == 1 && wordList.contains(endWord)) {
-            return 1;
+        boolean[] visited = new boolean[wordList.size()];
+        int idx = wordList.indexOf(beginWord);
+        if (idx != -1) {
+            visited[idx] = true;
         }
-        solve(beginWord, endWord, wordList, 0, new HashSet<String>());
-        return minStep == Integer.MAX_VALUE ? 0 : minStep;
-    }
-
-    private static void solve(String current, String target, List<String> wordList, int steps, Set<String> set) {
-        if (current.equals(target)) {
-            minStep = Math.min(minStep, steps - 1);
-            return;
-        }
-
-        for (String word : wordList) {
-            int different = 0;
-            for (int i = 0; i < word.length(); i++) {
-                if (word.charAt(i) == current.charAt(i)) {
-                    different++;
-                    if (different > 1) {
-                        break;
+        Queue<String> queue = new LinkedList<>();
+        queue.offer(beginWord);
+        int count = 0;
+        while (queue.size() > 0) {
+            int size = queue.size();
+            ++count;
+            while (size-- > 0) {
+                String start = queue.poll();
+                for (int i = 0; i < wordList.size(); ++i) {
+                    if (visited[i]) {
+                        continue;
                     }
+                    String s = wordList.get(i);
+                    if (!canConvert(start, s)) {
+                        continue;
+                    }
+                    if (s.equals(endWord)) {
+                        return count + 1;
+                    }
+                    visited[i] = true;
+                    queue.offer(s);
                 }
             }
-            if (different == 1 && !set.contains(word)) {
-                set.add(word);
-                solve(word, target, wordList, steps + 1, set);
-            }
         }
+        return 0;
     }
 
-    public static void main(String[] args) {
-        String[] wordList = {"a", "b", "c"};
-        System.out.println(ladderLength("a", "c", Arrays.asList(wordList)));
+    public boolean canConvert(String s1, String s2) {
+        int count = 0;
+        for (int i = 0; i < s1.length(); ++i) {
+            if (s1.charAt(i) != s2.charAt(i)) {
+                ++count;
+                if (count > 1) {
+                    return false;
+                }
+            }
+        }
+        return count == 1;
     }
 }
