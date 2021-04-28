@@ -8,14 +8,48 @@
 //        输入：[2,2,1,1,1,2,2]
 //        输出：2
 
+import java.util.Arrays;
+
 /**
  * @author songshiyu 多数元素 TODO
  * @date 2021/4/17 21:43
  **/
 public class LeetCode169 {
 
-    public int majorityElement(int[] nums) {
-        return 0;
+    /**
+     * 排序解决
+     *
+     * @param nums
+     * @return
+     */
+    public int majorityElement2(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+        Arrays.sort(nums);
+        int mid = nums.length / 2;
+        return nums[mid];
+    }
+
+    /**
+     * 摩尔投票法
+     *
+     * @param nums
+     * @return
+     */
+    public int majorityElement3(int[] nums) {
+        int cand = nums[0], count = 1;
+        for (int i = 1; i < nums.length; i++) {
+            if (cand == nums[i]) {
+                count++;
+            } else {
+                if (--count == 0) {
+                    cand = nums[i];
+                    count = 1;
+                }
+            }
+        }
+        return cand;
     }
 
 }
