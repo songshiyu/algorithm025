@@ -30,7 +30,7 @@ public class LeetCode198 {
      * @param nums
      * @return
      */
-    public static int rob(int[] nums) {
+    public int rob(int[] nums) {
 
         int[] dp = new int[nums.length + 1];
         dp[0] = 0;
@@ -39,29 +39,5 @@ public class LeetCode198 {
             dp[i] = Math.max(dp[i - 2] + nums[i - 1], dp[i - 1]);
         }
         return dp[nums.length];
-    }
-
-    /**
-     * 动态规划 - 在空间层面进行优化
-     *
-     * @param nums
-     * @return
-     */
-    public static int rob2(int[] nums) {
-        int sum1 = nums[0];
-        int sum2 = nums[1];
-        for (int i = 2; i < nums.length; i++) {
-            int tmp = sum1;
-            if (sum1 < sum2) {
-                sum1 = sum2;
-            }
-            sum1 = Math.max(tmp + nums[i], sum2);
-        }
-        return sum1;
-    }
-
-    public static void main(String[] args) {
-        int[] num = {1, 2, 3, 1};
-        System.out.println(rob2(num));
     }
 }
