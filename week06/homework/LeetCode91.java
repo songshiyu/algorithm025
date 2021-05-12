@@ -37,24 +37,31 @@
 //        s 只包含数字，并且可能包含前导零。
 
 /**
- * @description: 解码方法 TODO
+ * @description: 解码方法
  * @create: 2021/5/10 09:17:25
  **/
 public class LeetCode91 {
 
     /**
-     * dp方程：
-     * dp[i]
-     *
      * @param s
      * @return
      */
     public int numDecodings(String s) {
-
-        if (s.startsWith("0")) {
-            return 0;
+        int n = s.length();
+        s = " " + s;
+        char[] charsArray = s.toCharArray();
+        int[] dp = new int[n + 1];
+        dp[0] = 1;
+        for (int i = 1; i <= n; i++) {
+            int item = charsArray[i] - '0';
+            int itemD = (charsArray[i - 1] - '0') * 10 + (charsArray[i] - '0');
+            if (item >= 1 && item <= 9) {
+                dp[i] = dp[i - 1];
+            }
+            if (itemD >= 10 && itemD <= 26) {
+                dp[i] = dp[i] + dp[i - 2];
+            }
         }
-
-        return 0;
+        return dp[n];
     }
 }
